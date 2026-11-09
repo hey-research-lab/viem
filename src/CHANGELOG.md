@@ -1,5 +1,23 @@
 # viem
 
+## 2.57.18
+
+### Patch Changes
+
+- [#5447](https://github.com/wevm/viem/pull/5447) [`1dd5cc13680dc6319eae7707e6b5a9a156b90d12`](https://github.com/wevm/viem/commit/1dd5cc13680dc6319eae7707e6b5a9a156b90d12) Thanks [@jxom](https://github.com/jxom)! - Added `iterateLogs` and a `blockRange` parameter on `getLogs`, which read logs across a block range in pages of blocks and split pages that an RPC Provider rejects.
+
+- [#5444](https://github.com/wevm/viem/pull/5444) [`c51bd55ae71ef9da4151eb691fd246f911e9e44a`](https://github.com/wevm/viem/commit/c51bd55ae71ef9da4151eb691fd246f911e9e44a) Thanks [@jxom](https://github.com/jxom)! - Fixed `hexToBytes` and `toBytes` shifting the bytes of odd-length hex values when `size` was specified.
+
+- [#5443](https://github.com/wevm/viem/pull/5443) [`bb4662fdb1aaa3194f20ccf6d8a3ea42466348e0`](https://github.com/wevm/viem/commit/bb4662fdb1aaa3194f20ccf6d8a3ea42466348e0) Thanks [@jxom](https://github.com/jxom)! - Added a `signal` parameter to `waitForTransactionReceipt` that stops the wait, rejecting with the signal's reason.
+
+- [`08c90ddb787ad165e78e2c86c5abbd85f0feeb40`](https://github.com/wevm/viem/commit/08c90ddb787ad165e78e2c86c5abbd85f0feeb40) Thanks [@mortezashojaei](https://github.com/mortezashojaei)! - Fixed `simulateContract` falling back to the client account when `account` is `null`.
+
+- [#5440](https://github.com/wevm/viem/pull/5440) [`b7e14ab83a607a5cfed7ac469ae592954bb3ff1e`](https://github.com/wevm/viem/commit/b7e14ab83a607a5cfed7ac469ae592954bb3ff1e) Thanks [@jxom](https://github.com/jxom)! - Fixed `validateSiweMessage` and `verifySiweMessage` accepting a message with a nonce shorter than 8 alphanumeric characters or a version other than `1`, which EIP-4361 does not allow.
+
+- [#5442](https://github.com/wevm/viem/pull/5442) [`a960ce1a524d3e14066f73a1b0daeea8a4abc49b`](https://github.com/wevm/viem/commit/a960ce1a524d3e14066f73a1b0daeea8a4abc49b) Thanks [@jxom](https://github.com/jxom)! - Fixed `getEnsAddress` to resolve leading-zero EVM addresses and return `null` for the zero address instead of throwing when an offchain resolver returned an address-encoded response for an Ethereum or EVM chain `coinType`.
+
+- [#5435](https://github.com/wevm/viem/pull/5435) [`8421bad488309e97efe7c813414cfa2632e4af7c`](https://github.com/wevm/viem/commit/8421bad488309e97efe7c813414cfa2632e4af7c) Thanks [@mortezashojaei](https://github.com/mortezashojaei)! - Centralized the transport selection logic shared by `watchBlockHeaders`, `watchBlockNumber`, `watchBlocks`, `watchContractEvent`, and `watchEvent`.
+
 ## 2.57.17
 
 ### Patch Changes
